@@ -10,24 +10,21 @@
   <div id="app">
     <h1>{{ title }}</h1>
     <nav>
-      <router-link to="/">ホーム</router-link>
-      <router-link to="/news">ニュース</router-link>
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Home</router-link>
+      <router-link to="/restaurant">restaurant</router-link>
     </nav>
     <router-view/>
   </div>
 <script>
   // (1)コンポーネントの設定
   const Home = { template: '<div>初めてのVue Resource</div>'}
-  const News = { template: '<div>今週のニュースは....</div>'}
-  const About = { template: '<div>会社までのアクセス方法は....</div>'}
+  import Restaurant from '@/components/restaurant/restaurant'
 
   // (2)ルーティングの設定
   const router = new VueRouter({
     routes : [
       {path:'/', component : Home},
-      {path:'/news',component: News},
-      {path:'/about',component: About}
+      {path:'/restaurant',component: Restaurant}
     ]
   })
 
